@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch server.js",
+    "build": "echo API build complete",
     "start": "node server.js",
     "seed": "node seed/seedData.js"
   },
