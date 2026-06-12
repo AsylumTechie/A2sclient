@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Share2, Globe, MessageCircle, Rss } from 'lucide-react';
+import { Phone, Mail, MapPin, Share2 } from 'lucide-react';
 import { companyInfo, navLinks, serviceCategories } from '../data/siteData';
 
 export default function Footer() {
@@ -21,14 +21,17 @@ export default function Footer() {
               {companyInfo.tagline}. We deliver innovative digital solutions that drive growth and exceed
               expectations.
             </p>
-            <div className="flex gap-3">
-              {[Share2, Globe, MessageCircle, Rss].map((Icon, i) => (
+            <div className="flex flex-wrap gap-2">
+              {companyInfo.socialLinks.map((social) => (
                 <a
-                  key={i}
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-800 text-slate-400 transition hover:bg-brand-600 hover:text-white"
+                  key={social.label}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-slate-800 px-3 py-2 text-xs text-slate-300 transition hover:bg-brand-600 hover:text-white"
                 >
-                  <Icon size={16} />
+                  <Share2 size={14} />
+                  {social.label}
                 </a>
               ))}
             </div>

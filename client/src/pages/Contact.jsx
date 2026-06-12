@@ -1,11 +1,17 @@
 import { Phone, Mail, MapPin, Globe } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import ContactForm from '../components/ContactForm';
+import SEO from '../components/SEO';
 import { companyInfo } from '../data/siteData';
 
 export default function Contact() {
   return (
     <>
+      <SEO
+        title="Contact Us — Jaipur Office"
+        description={`Contact A2S Ecom Solutions in Jaipur. Call ${companyInfo.phone} or email ${companyInfo.email} for SEO, digital marketing, and e-commerce services.`}
+        path="/contact"
+      />
       <PageHeader
         badge="Contact Us"
         title="Get In Touch"

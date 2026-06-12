@@ -6,6 +6,9 @@ import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
 import SellerCentral from './pages/SellerCentral';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -17,7 +20,10 @@ export default function App() {
           <Route path="services" element={<Services />} />
           <Route path="services/:slug" element={<ServiceDetail />} />
           <Route path="seller-central" element={<SellerCentral />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -2,11 +2,18 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Shield, Clock, FileText } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import InquiryForm from '../components/InquiryForm';
+import SEO from '../components/SEO';
 import { sellerCentralServices, pricingPlans } from '../data/siteData';
 
 export default function SellerCentral() {
   return (
     <>
+      <SEO
+        title="Amazon Seller Central Management in Jaipur"
+        description="Professional Amazon Seller Central management in Jaipur — product listings, FBA, sponsored ads, feedback & claims. Plans from ₹999/month. A2S Ecom Solutions."
+        path="/seller-central"
+        keywords="Amazon seller central Jaipur, seller central management, Amazon account management Jaipur, FBA services Jaipur"
+      />
       <PageHeader
         badge="E-Commerce Seller Central"
         title="Remote Seller Central Management"

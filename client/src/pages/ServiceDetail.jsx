@@ -4,6 +4,8 @@ import * as Icons from 'lucide-react';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 import { loadServiceBySlug } from '../api/serviceHelpers';
 import InquiryForm from '../components/InquiryForm';
+import SEO from '../components/SEO';
+import { serviceSchema, breadcrumbSchema } from '../seo/structuredData';
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -42,9 +44,25 @@ export default function ServiceDetail() {
   }
 
   const Icon = Icons[service.icon] || Icons.Globe;
+  const seoDescription = `${service.shortDescription} Professional ${service.title.toLowerCase()} services in Jaipur, Rajasthan by A2S Ecom Solutions.`;
 
   return (
     <>
+      <SEO
+        title={`${service.title} in Jaipur`}
+        description={seoDescription.slice(0, 160)}
+        path={`/services/${service.slug}`}
+        type="article"
+        keywords={`${service.title} Jaipur, ${service.title} Rajasthan, ${service.slug.replace(/-/g, ' ')}`}
+        jsonLd={[
+          serviceSchema(service),
+          breadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Services', url: '/services' },
+            { name: service.title, url: `/services/${service.slug}` },
+          ]),
+        ]}
+      />
       <section className="bg-gradient-to-br from-slate-900 via-brand-900 to-brand-800 py-16">
         <div className="container-custom px-4 sm:px-6 lg:px-8">
           <Link to="/services" className="mb-6 inline-flex items-center gap-2 text-sm text-brand-200 hover:text-white">

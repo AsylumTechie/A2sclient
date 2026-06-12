@@ -1,13 +1,25 @@
 export const companyInfo = {
   name: 'A2S Ecom Solutions',
-  shortName: 'A2secomsolutions',
+  shortName: 'A2S Ecom Solutions',
   tagline: 'Your growth partners committed to delivering exceptional results',
   phone: '+91-8504823748',
   email: 'info@a2secommercesolution.com',
   website: 'a2secomsolutions.com',
   udyam: 'UDYAM-RJ-17-0312662',
   san: 'SAN: 8006540003001703',
-  address: 'Jaipur, Rajasthan, India',
+  streetAddress: 'Jaipur',
+  city: 'Jaipur',
+  state: 'Rajasthan',
+  postalCode: '302001',
+  country: 'India',
+  address: 'Jaipur, Rajasthan 302001, India',
+  geo: { lat: 26.9124, lng: 75.7873 },
+  socialLinks: [
+    { label: 'Facebook', url: 'https://www.facebook.com/a2secomsolutions' },
+    { label: 'Instagram', url: 'https://www.instagram.com/a2secomsolutions' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/company/a2secomsolutions' },
+    { label: 'YouTube', url: 'https://www.youtube.com/@a2secomsolutions' },
+  ],
 };
 
 export const heroContent = {
@@ -15,7 +27,7 @@ export const heroContent = {
   title: 'Grow Your Business with',
   titleHighlight: 'Smart Digital Solutions',
   subtitle:
-    'Transform your vision into reality with our expert team. We deliver innovative digital solutions that drive growth and exceed expectations.',
+    'Jaipur\'s trusted digital marketing and e-commerce agency. We deliver SEO, website development, Amazon Seller Central management, and branding solutions that drive measurable growth across Rajasthan and India.',
   ctaPrimary: 'Start a Project',
   ctaSecondary: 'Pay Now',
 };
@@ -199,7 +211,7 @@ export const testimonials = [
   {
     name: 'Sarah Johnson',
     company: 'CEO, TechStart Inc',
-    text: 'Working with A2secomsolutions transformed our online presence completely. Their team delivered beyond our expectations, and our website traffic increased by 300% in just 3 months.',
+    text: 'Working with A2S Ecom Solutions transformed our online presence completely. Their team delivered beyond our expectations, and our website traffic increased by 300% in just 3 months.',
     rating: 5,
     image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
@@ -213,7 +225,7 @@ export const testimonials = [
   {
     name: 'Emily Rodriguez',
     company: 'Marketing Director, FitLife',
-    text: 'A2secomsolutions\'s digital marketing strategies are data-driven and effective. They helped us reach our target audience and significantly improved our ROI.',
+    text: 'A2S Ecom Solutions\' digital marketing strategies are data-driven and effective. They helped us reach our target audience and significantly improved our ROI.',
     rating: 5,
     image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200',
   },
@@ -230,6 +242,30 @@ export const navLinks = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
   { path: '/services', label: 'Services' },
+  { path: '/blog', label: 'Blog' },
   { path: '/seller-central', label: 'Seller Central' },
   { path: '/contact', label: 'Contact' },
+];
+
+export const homeFaqs = [
+  {
+    question: 'What digital marketing services do you offer in Jaipur?',
+    answer:
+      'A2S Ecom Solutions offers SEO, social media marketing, performance marketing, website development, e-commerce account management, Amazon Seller Central services, branding, and business consulting for businesses in Jaipur and across India.',
+  },
+  {
+    question: 'Do you manage Amazon and Flipkart seller accounts?',
+    answer:
+      'Yes. We provide complete e-commerce account management including product listings, inventory, pricing, sponsored ads, and Seller Central support for Amazon, Flipkart, Meesho, and other marketplaces.',
+  },
+  {
+    question: 'How can I get a quote for your services in Jaipur?',
+    answer:
+      'Contact us at +91-8504823748, email info@a2secommercesolution.com, or fill out the contact form on our website. We respond within 24 hours with a customized proposal.',
+  },
+  {
+    question: 'Why choose A2S Ecom Solutions over other agencies in Jaipur?',
+    answer:
+      'We combine 500+ completed projects, dedicated account managers, data-driven strategies, transparent pricing, and specialized expertise in both digital marketing and e-commerce marketplace management.',
+  },
 ];

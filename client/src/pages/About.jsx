@@ -2,12 +2,18 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Eye, Heart } from 'lucide-react';
 import PageHeader from '../components/PageHeader';
 import Stats from '../components/Stats';
+import SEO from '../components/SEO';
 import { companyInfo, whyChooseUs, whyChooseUsIntro, processSection } from '../data/siteData';
 import * as Icons from 'lucide-react';
 
 export default function About() {
   return (
     <>
+      <SEO
+        title="About Us — Digital Agency in Jaipur"
+        description={`Learn about ${companyInfo.name}, a Jaipur-based digital marketing and e-commerce agency with 500+ projects, expert team, and proven growth strategies across Rajasthan.`}
+        path="/about"
+      />
       <PageHeader
         badge="About Us"
         title="Your Growth Partners"
@@ -20,9 +26,9 @@ export default function About() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-display text-3xl font-bold text-slate-900">Welcome to {companyInfo.name}</h2>
             <p className="mt-6 text-lg leading-relaxed text-slate-600">
-              Transform your vision into reality with our expert team. We deliver innovative digital solutions
-              that drive growth and exceed expectations — from digital marketing and website development to
-              e-commerce management and branding.
+              Based in Jaipur, Rajasthan, we deliver innovative digital solutions that drive growth and exceed
+              expectations — from digital marketing and website development to e-commerce management and branding
+              for businesses across India.
             </p>
             <p className="mt-4 text-lg font-medium text-brand-600">{companyInfo.tagline}</p>
           </div>

@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import Stats from '../components/Stats';
 import ServiceCard from '../components/ServiceCard';
 import { loadServices } from '../api/serviceHelpers';
+import SEO from '../components/SEO';
+import { faqSchema } from '../seo/structuredData';
 import {
   companyInfo,
   heroContent,
@@ -16,6 +18,7 @@ import {
   testimonialsSection,
   testimonials,
   ctaSection,
+  homeFaqs,
 } from '../data/siteData';
 
 export default function Home() {
@@ -29,6 +32,12 @@ export default function Home() {
 
   return (
     <>
+      <SEO
+        title="Digital Marketing & E-Commerce Agency in Jaipur"
+        description="A2S Ecom Solutions — Jaipur's top digital marketing, SEO, website development, and Amazon Seller Central management agency. 500+ projects. Free consultation."
+        path="/"
+        jsonLd={faqSchema(homeFaqs)}
+      />
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-brand-50">
         <div className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-brand-200/40 blur-3xl" />
         <div className="absolute -left-32 bottom-0 h-96 w-96 rounded-full bg-orange-400/20 blur-3xl" />
@@ -92,7 +101,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              {whyChooseUs.slice(0, 4).map((item) => {
+              {whyChooseUs.map((item) => {
                 const Icon = Icons[item.icon] || Icons.CheckCircle;
                 return (
                   <div key={item.title} className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm">
@@ -153,31 +162,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="mb-12 text-center">
-            <h2 className="font-display text-3xl font-bold text-slate-900 md:text-4xl">Why Choose Us?</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-slate-600">{whyChooseUsIntro}</p>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {whyChooseUs.map((item) => {
-              const Icon = Icons[item.icon] || Icons.CheckCircle;
-              return (
-                <div
-                  key={item.title}
-                  className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm card-hover"
-                >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600">
-                    <Icon size={24} />
-                  </div>
-                  <h3 className="font-display text-sm font-semibold leading-snug text-slate-900">{item.title}</h3>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       <section className="section-padding bg-slate-50">
         <div className="container-custom">
           <div className="mb-12 text-center">
@@ -215,7 +199,14 @@ export default function Home() {
               <div key={t.name} className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
                 <div className="mb-4 flex items-center gap-3">
                   {t.image && (
-                    <img src={t.image} alt={t.name} className="h-12 w-12 rounded-full object-cover" />
+                    <img
+                      src={t.image}
+                      alt={`${t.name}, ${t.company}`}
+                      loading="lazy"
+                      width={48}
+                      height={48}
+                      className="h-12 w-12 rounded-full object-cover"
+                    />
                   )}
                   <div>
                     <p className="font-semibold text-slate-900">{t.name}</p>
@@ -229,6 +220,33 @@ export default function Home() {
                 </div>
                 <p className="text-sm leading-relaxed text-slate-600">&ldquo;{t.text}&rdquo;</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-slate-50">
+        <div className="container-custom">
+          <div className="mb-12 text-center">
+            <span className="text-sm font-semibold uppercase tracking-wider text-brand-600">FAQ</span>
+            <h2 className="mt-2 font-display text-3xl font-bold text-slate-900 md:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+              Common questions about our digital marketing and e-commerce services in Jaipur.
+            </p>
+          </div>
+          <div className="mx-auto max-w-3xl space-y-4">
+            {homeFaqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm"
+              >
+                <summary className="cursor-pointer font-display font-semibold text-slate-900 marker:content-none">
+                  {faq.question}
+                </summary>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">{faq.answer}</p>
+              </details>
             ))}
           </div>
         </div>

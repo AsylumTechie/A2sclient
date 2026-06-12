@@ -5,7 +5,35 @@ import PageHeader from '../components/PageHeader';
 import ServiceCard from '../components/ServiceCard';
 import InquiryForm from '../components/InquiryForm';
 import { loadServices } from '../api/serviceHelpers';
+import SEO from '../components/SEO';
 import { serviceCategories } from '../data/siteData';
+
+const categorySeo = {
+  'digital-marketing': {
+    title: 'Digital Marketing Services in Jaipur',
+    description: 'SEO, social media marketing, performance marketing & content marketing services in Jaipur by A2S Ecom Solutions.',
+  },
+  'ecommerce-setup': {
+    title: 'E-Commerce Account Management in Jaipur',
+    description: 'Amazon, Flipkart & Meesho account management services in Jaipur. Listings, inventory, ads & growth strategies.',
+  },
+  'website-development': {
+    title: 'Website Development Company in Jaipur',
+    description: 'Custom website, front-end, back-end & web app development in Jaipur. Responsive, fast & SEO-friendly sites.',
+  },
+  'graphic-branding': {
+    title: 'Branding & Logo Design in Jaipur',
+    description: 'Professional logo design and corporate branding services in Jaipur. Build a memorable brand identity.',
+  },
+  'business-growth': {
+    title: 'Business Consulting & Sales Funnels in Jaipur',
+    description: 'Business consulting and high-converting sales funnel services in Jaipur for startups and SMEs.',
+  },
+  'seller-central': {
+    title: 'Seller Central Services in Jaipur',
+    description: 'Complete Amazon Seller Central support in Jaipur — listings, pricing, ads, FBA & account health.',
+  },
+};
 
 export default function Services() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -23,9 +51,21 @@ export default function Services() {
   }, [activeCategory]);
 
   const activeCat = serviceCategories.find((c) => c.id === activeCategory);
+  const seo = activeCategory
+    ? categorySeo[activeCategory]
+    : {
+        title: 'Our Services — Digital & E-Commerce Solutions in Jaipur',
+        description:
+          'Explore 24+ digital marketing, SEO, website development, e-commerce, and branding services in Jaipur by A2S Ecom Solutions.',
+      };
 
   return (
     <>
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        path={activeCategory ? `/services?category=${activeCategory}` : '/services'}
+      />
       <PageHeader
         badge="Our Services"
         title={activeCat ? activeCat.title : 'Our Services'}
