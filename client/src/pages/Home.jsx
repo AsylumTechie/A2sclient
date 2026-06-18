@@ -56,7 +56,7 @@ export default function Home() {
                 <Link to="/contact" className="btn-primary">
                   {heroContent.ctaPrimary} <ArrowRight size={18} />
                 </Link>
-                <Link to="/contact" className="btn-secondary">
+                <Link to="/pay" className="btn-secondary">
                   {heroContent.ctaSecondary}
                 </Link>
               </div>
@@ -264,7 +264,7 @@ export default function Home() {
               {ctaSection.primary} <ArrowRight size={18} />
             </Link>
             <Link
-              to="/contact"
+              to="/pay"
               className="inline-flex items-center gap-2 rounded-xl border-2 border-white/30 px-8 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
               {ctaSection.secondary}

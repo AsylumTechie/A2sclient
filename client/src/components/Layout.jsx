@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ConsultationPopup from './ConsultationPopup';
 import StructuredData from './StructuredData';
 import { organizationSchema, localBusinessSchema, websiteSchema } from '../seo/structuredData';
 
@@ -13,6 +14,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <ConsultationPopup />
     </div>
   );
 }

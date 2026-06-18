@@ -7,6 +7,7 @@ import connectDB from './config/db.js';
 import contactRoutes from './routes/contact.js';
 import inquiryRoutes from './routes/inquiries.js';
 import serviceRoutes from './routes/services.js';
+import paymentRoutes from './routes/payments.js';
 
 dotenv.config();
 
@@ -70,6 +71,7 @@ app.get('/api/stats', (req, res) => {
 app.use('/api/contact', contactRoutes);
 app.use('/api/inquiries', inquiryRoutes);
 app.use('/api/services', serviceRoutes);
+app.use('/api/payments', paymentRoutes);
 
 // NOTE:
 // - On Render we deploy ONLY the API (no built React app in ../client/dist)

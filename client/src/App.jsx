@@ -8,6 +8,7 @@ import SellerCentral from './pages/SellerCentral';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Payment from './pages/Payment';
 import NotFound from './pages/NotFound';
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="blog" element={<Blog />} />
           <Route path="blog/:slug" element={<BlogPost />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="pay" element={<Payment />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
